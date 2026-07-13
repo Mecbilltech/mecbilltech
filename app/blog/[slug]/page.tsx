@@ -83,11 +83,11 @@ export default async function BlogPostPage({
       <div className="max-w-3xl mx-auto py-12">
         {/* Back Link */}
         <Link
-          href="/#blog"
+          href="/blog"
           className="inline-flex items-center gap-2 text-xs font-bold text-primary mb-8 hover:underline"
         >
           <ArrowLeft className="size-4" />
-          <span>Back to Home</span>
+          <span>Back to Blog</span>
         </Link>
 
         {/* Article Header */}

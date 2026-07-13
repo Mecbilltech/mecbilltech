@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname, useRouter } from "next/navigation";
 import { Sun, Moon, Menu, X, ArrowRight, Sparkles } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
@@ -12,18 +13,15 @@ const navLinks = [
   { name: "About", href: "/about" },
   { name: "Services", href: "/services" },
   { name: "Projects", href: "/projects" },
-  // { name: "Process", href: "#process" },
-  // { name: "Tech Stack", href: "#tech-stack" },
-  // { name: "Testimonials", href: "#testimonials" },
-  // { name: "FAQ", href: "#faq" },
   { name: "Blog", href: "/blog" },
   { name: "Contact", href: "/contact" },
 ];
 
 export default function Navbar() {
+  const pathname = usePathname();
+  const router = useRouter();
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState("home");
   const [theme, setTheme] = useState<"light" | "dark">("dark");
 
   useEffect(() => {
@@ -39,24 +37,7 @@ export default function Navbar() {
     window.addEventListener("theme-change", handleThemeChange);
 
     const handleScroll = () => {
-      // Nav style on scroll
       setScrolled(window.scrollY > 20);
-
-      // Active section highlight
-      const sections = navLinks.map((link) => link.href.slice(1));
-      let currentActive = "home";
-
-      for (const section of sections) {
-        const el = document.getElementById(section);
-        if (el) {
-          const rect = el.getBoundingClientRect();
-          if (rect.top <= 120 && rect.bottom >= 120) {
-            currentActive = section;
-            break;
-          }
-        }
-      }
-      setActiveSection(currentActive);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -79,16 +60,6 @@ export default function Navbar() {
     }
   };
 
-  const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    e.preventDefault();
-    setMobileMenuOpen(false);
-    const id = href.slice(1);
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
   return (
     <>
       <header className="fixed left-0 right-0 top-0 z-50 flex justify-center px-4 md:px-8">
@@ -101,7 +72,7 @@ export default function Navbar() {
           }`}
         >
           {/* Logo */}
-          <Link href="#home" onClick={(e) => handleLinkClick(e, "#home")} className="flex items-center gap-2">
+          <Link href="/" className="flex items-center gap-2">
             <Image
               src="/logo.png"
               alt="MecbillTech Logo"
@@ -117,27 +88,29 @@ export default function Navbar() {
 
           {/* Desktop Nav Links */}
           <div className="hidden items-center gap-1 xl:flex">
-            {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                onClick={(e) => handleLinkClick(e, link.href)}
-                className={`relative rounded-full px-3.5 py-1.5 text-xs font-semibold tracking-wide transition-colors ${
-                  activeSection === link.href.slice(1)
-                    ? "text-primary dark:text-white"
-                    : "text-muted-foreground hover:text-foreground"
-                }`}
-              >
-                {activeSection === link.href.slice(1) && (
-                  <motion.div
-                    layoutId="activeNavIndicator"
-                    className="absolute inset-0 z-[-1] rounded-full bg-primary/10 dark:bg-white/10"
-                    transition={{ type: "spring", stiffness: 380, damping: 30 }}
-                  />
-                )}
-                {link.name}
-              </a>
-            ))}
+            {navLinks.map((link) => {
+              const isActive = pathname === link.href || (link.href !== "/" && pathname?.startsWith(link.href));
+              return (
+                <Link
+                  key={link.name}
+                  href={link.href}
+                  className={`relative rounded-full px-3.5 py-1.5 text-xs font-semibold tracking-wide transition-colors ${
+                    isActive
+                      ? "text-primary dark:text-white"
+                      : "text-muted-foreground hover:text-foreground"
+                  }`}
+                >
+                  {isActive && (
+                    <motion.div
+                      layoutId="activeNavIndicator"
+                      className="absolute inset-0 z-[-1] rounded-full bg-primary/10 dark:bg-white/10"
+                      transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                    />
+                  )}
+                  {link.name}
+                </Link>
+              );
+            })}
           </div>
 
           {/* Right Actions */}
@@ -145,7 +118,7 @@ export default function Navbar() {
             {/* Theme Toggle */}
             <button
               onClick={toggleTheme}
-              className="rounded-full p-2 text-muted-foreground hover:bg-muted hover:text-foreground"
+              className="rounded-full p-2 text-muted-foreground hover:bg-muted hover:text-foreground cursor-pointer"
               aria-label="Toggle theme"
             >
               {theme === "dark" ? <Sun className="size-4 text-amber-400" /> : <Moon className="size-4 text-blue-600" />}
@@ -155,11 +128,8 @@ export default function Navbar() {
             <Button
               variant="default"
               size="sm"
-              onClick={() => {
-                const el = document.getElementById("contact");
-                el?.scrollIntoView({ behavior: "smooth" });
-              }}
-              className="hidden sm:inline-flex rounded-full px-5 py-2 font-semibold shadow-md bg-primary hover:bg-primary/95 text-white"
+              onClick={() => router.push("/contact")}
+              className="hidden sm:inline-flex rounded-full px-5 py-2 font-semibold shadow-md bg-primary hover:bg-primary/95 text-white cursor-pointer"
             >
               <Sparkles className="size-3.5 mr-1" />
               Book a Consultation
@@ -168,7 +138,7 @@ export default function Navbar() {
             {/* Mobile Menu Toggle */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="rounded-full p-2 text-muted-foreground hover:bg-muted hover:text-foreground xl:hidden"
+              className="rounded-full p-2 text-muted-foreground hover:bg-muted hover:text-foreground xl:hidden cursor-pointer"
               aria-label="Toggle navigation menu"
             >
               {mobileMenuOpen ? <X className="size-5" /> : <Menu className="size-5" />}
@@ -189,21 +159,27 @@ export default function Navbar() {
           >
             {/* Navigation Links List */}
             <div className="flex flex-col gap-5">
-              {navLinks.map((link, i) => (
-                <motion.a
-                  key={link.name}
-                  href={link.href}
-                  onClick={(e) => handleLinkClick(e, link.href)}
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: i * 0.05 }}
-                  className={`text-xl font-bold tracking-tight transition-colors ${
-                    activeSection === link.href.slice(1) ? "text-primary" : "text-muted-foreground hover:text-foreground"
-                  }`}
-                >
-                  {link.name}
-                </motion.a>
-              ))}
+              {navLinks.map((link, i) => {
+                const isActive = pathname === link.href || (link.href !== "/" && pathname?.startsWith(link.href));
+                return (
+                  <motion.div
+                    key={link.name}
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: i * 0.05 }}
+                  >
+                    <Link
+                      href={link.href}
+                      onClick={() => setMobileMenuOpen(false)}
+                      className={`text-xl font-bold tracking-tight transition-colors ${
+                        isActive ? "text-primary" : "text-muted-foreground hover:text-foreground"
+                      }`}
+                    >
+                      {link.name}
+                    </Link>
+                  </motion.div>
+                );
+              })}
             </div>
 
             {/* Mobile Actions Footer */}
@@ -213,10 +189,9 @@ export default function Navbar() {
                 size="lg"
                 onClick={() => {
                   setMobileMenuOpen(false);
-                  const el = document.getElementById("contact");
-                  el?.scrollIntoView({ behavior: "smooth" });
+                  router.push("/contact");
                 }}
-                className="w-full rounded-full font-bold shadow-md text-white"
+                className="w-full rounded-full font-bold shadow-md text-white cursor-pointer"
               >
                 Book a Free Consultation
                 <ArrowRight className="size-4 ml-2" />

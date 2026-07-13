@@ -126,11 +126,11 @@ export default async function CaseStudyPage({
       <div className="max-w-3xl mx-auto py-12">
         {/* Back Link */}
         <Link
-          href="/#projects"
+          href="/projects"
           className="inline-flex items-center gap-2 text-xs font-bold text-primary mb-8 hover:underline"
         >
           <ArrowLeft className="size-4" />
-          <span>Back to Home</span>
+          <span>Back to Projects</span>
         </Link>
 
         {/* Header */}
@@ -188,7 +188,7 @@ export default async function CaseStudyPage({
             Let MecbillTech analyze your website workflow and engineer a high-performing digital system tailored for your growth.
           </p>
           <Link
-            href="/#contact"
+            href="/contact"
             className="inline-flex items-center justify-center rounded-full bg-primary px-6 py-3 text-sm font-bold text-white shadow-md shadow-primary/20 hover:bg-primary/90"
           >
             Get a Free Proposal
