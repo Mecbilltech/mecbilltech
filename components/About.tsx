@@ -44,7 +44,7 @@ export default function About() {
   const [activeTab, setActiveTab] = useState("journey");
 
   return (
-    <section id="about" className="py-20 relative">
+    <section id="about" className="py-12 relative">
       <div className="text-center max-w-2xl mx-auto mb-16">
         <h2 className="text-xs uppercase font-extrabold tracking-[0.25em] text-primary mb-3">Who is MecbillTech</h2>
         <p className="text-3xl font-extrabold text-foreground tracking-tight sm:text-4xl">

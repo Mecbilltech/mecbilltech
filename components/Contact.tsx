@@ -6,7 +6,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { motion, AnimatePresence } from "framer-motion";
 import { Mail, MessageCircle, MapPin, Sparkles, Send, CheckCircle2 } from "lucide-react";
-import { Github, Linkedin } from "@/components/Icons";
+import { Linkedin } from "@/components/Icons";
 import { Button } from "@/components/ui/button";
 
 // Validations Schema
@@ -83,7 +83,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-20 relative">
+    <section id="contact" className="py-12 relative">
       <div className="text-center max-w-2xl mx-auto mb-16">
         <h2 className="text-xs uppercase font-extrabold tracking-[0.25em] text-primary mb-3">Get in Touch</h2>
         <p className="text-3xl font-extrabold text-foreground tracking-tight sm:text-4xl">
@@ -103,23 +103,23 @@ export default function Contact() {
             </div>
 
             <div className="space-y-6">
-              <a href="mailto:info@mecbilltech.com" className="flex items-center gap-4 group text-muted-foreground hover:text-foreground transition-colors">
+              <a href="mailto:mecbilltech@gmail.com" className="flex items-center gap-4 group text-muted-foreground hover:text-foreground transition-colors">
                 <div className="size-9 rounded-xl bg-muted border border-border flex items-center justify-center">
                   <Mail className="size-4" />
                 </div>
                 <div>
                   <span className="block text-[10px] uppercase font-bold tracking-wider">Email Address</span>
-                  <span className="text-sm font-semibold">info@mecbilltech.com</span>
+                  <span className="text-sm font-semibold">mecbilltech@gmail.com</span>
                 </div>
               </a>
 
-              <a href="https://wa.me/2348123456789" target="_blank" rel="noopener" className="flex items-center gap-4 group text-muted-foreground hover:text-foreground transition-colors">
+              <a href="https://wa.me/2348105219630" target="_blank" rel="noopener" className="flex items-center gap-4 group text-muted-foreground hover:text-foreground transition-colors">
                 <div className="size-9 rounded-xl bg-muted border border-border flex items-center justify-center">
                   <MessageCircle className="size-4" />
                 </div>
                 <div>
                   <span className="block text-[10px] uppercase font-bold tracking-wider">WhatsApp</span>
-                  <span className="text-sm font-semibold">+234 812 345 6789</span>
+                  <span className="text-sm font-semibold">+234 810 521 9630</span>
                 </div>
               </a>
 
@@ -139,7 +139,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <span className="block text-[10px] uppercase font-bold tracking-wider">Location</span>
-                  <span className="text-sm font-semibold">Lagos, Nigeria & Worldwide</span>
+                  <span className="text-sm font-semibold">Ondo, Nigeria & Worldwide</span>
                 </div>
               </div>
             </div>

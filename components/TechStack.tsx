@@ -11,24 +11,26 @@ interface TechItem {
 }
 
 const techItems: TechItem[] = [
-  { name: "React", category: "frontend", level: 95, experience: "3+ Years" },
-  { name: "Next.js", category: "frontend", level: 95, experience: "3+ Years" },
-  { name: "TypeScript", category: "frontend", level: 90, experience: "3+ Years" },
-  { name: "Tailwind CSS", category: "frontend", level: 95, experience: "3+ Years" },
+  { name: "React", category: "frontend", level: 95, experience: "2+ Years" },
+  { name: "Next.js", category: "frontend", level: 95, experience: "1+ Years" },
+  { name: "TypeScript", category: "frontend", level: 90, experience: "2+ Years" },
+  { name: "Bootstrap CSS", category: "frontend", level: 95, experience: "3+ Years" },
+  { name: "Tailwind CSS", category: "frontend", level: 85, experience: "1+ Years" },
   { name: "JavaScript", category: "frontend", level: 95, experience: "4+ Years" },
-  { name: "Node.js", category: "backend", level: 90, experience: "3+ Years" },
-  { name: "Express", category: "backend", level: 90, experience: "3+ Years" },
+  { name: "Node.js", category: "backend", level: 85, experience: "1+ Years" },
+  { name: "Express", category: "backend", level: 80, experience: "1+ Years" },
   { name: "Laravel", category: "backend", level: 85, experience: "2+ Years" },
+  { name: "Livewire", category: "frontend", level: 85, experience: "2+ Years" },
   { name: "PHP", category: "backend", level: 85, experience: "3+ Years" },
-  { name: "PostgreSQL", category: "database", level: 88, experience: "3+ Years" },
+  { name: "PostgreSQL", category: "database", level: 88, experience: "1+ Years" },
   { name: "MySQL", category: "database", level: 90, experience: "3+ Years" },
-  { name: "Supabase", category: "database", level: 92, experience: "2+ Years" },
-  { name: "Prisma", category: "database", level: 90, experience: "2+ Years" },
-  { name: "Docker", category: "tools", level: 80, experience: "2+ Years" },
-  { name: "Git & GitHub", category: "tools", level: 95, experience: "4+ Years" },
-  { name: "Vercel", category: "tools", level: 95, experience: "3+ Years" },
-  { name: "Figma", category: "tools", level: 85, experience: "3+ Years" },
-  { name: "Postman", category: "tools", level: 90, experience: "3+ Years" },
+  { name: "Supabase", category: "database", level: 85, experience: "1+ Years" },
+  { name: "Prisma", category: "database", level: 80, experience: "1+ Years" },
+  // { name: "Docker", category: "tools", level: 80, experience: "2+ Years" },
+  { name: "Git & GitHub", category: "tools", level: 95, experience: "3+ Years" },
+  { name: "Vercel", category: "tools", level: 95, experience: "1+ Years" },
+  // { name: "Figma", category: "tools", level: 85, experience: "3+ Years" },
+  { name: "Postman", category: "tools", level: 90, experience: "2+ Years" },
 ];
 
 export default function TechStack() {
@@ -39,7 +41,7 @@ export default function TechStack() {
   );
 
   return (
-    <section id="tech-stack" className="py-20 relative">
+    <section id="tech-stack" className="py-12 relative">
       <div className="text-center max-w-2xl mx-auto mb-12">
         <h2 className="text-xs uppercase font-extrabold tracking-[0.25em] text-primary mb-3">Capabilities</h2>
         <p className="text-3xl font-extrabold text-foreground tracking-tight sm:text-4xl">

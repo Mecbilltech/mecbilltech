@@ -40,7 +40,7 @@ export default function FAQ() {
   };
 
   return (
-    <section id="faq" className="py-20 relative">
+    <section id="faq" className="py-10 relative">
       <div className="text-center max-w-2xl mx-auto mb-16">
         <h2 className="text-xs uppercase font-extrabold tracking-[0.25em] text-primary mb-3">FAQ</h2>
         <p className="text-3xl font-extrabold text-foreground tracking-tight sm:text-4xl">
