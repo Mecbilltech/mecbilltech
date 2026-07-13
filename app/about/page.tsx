@@ -24,16 +24,16 @@ export default function AboutPage() {
               The Founder's Story
             </span>
             <h1 className="text-4xl font-extrabold text-foreground tracking-tight sm:text-5xl md:leading-[1.15]">
-              Meet Alade Odunayo: The Developer with a Marketer's Mindset.
+              Meet Alade Odunayo: Full-Stack Developer Focused on Business Growth
             </h1>
             <p className="text-base text-muted-foreground leading-relaxed">
-              I am Alade Odunayo, the founder and lead architect behind MecbillTech. My journey in technology didn't start with lines of code; it started with writing. For years, I produced content, optimized articles for SEO, and studied how users behave on websites.
+              I’m Alade Odunayo, the founder and lead developer behind MecbillTech. I help businesses establish a strong online presence by building fast, modern, and conversion-focused websites. Every project starts with understanding the business, its audience, and the goals the website needs to achieve.
             </p>
             <p className="text-base text-muted-foreground leading-relaxed">
-              When I transitioned into full-stack web development, I realized a massive gap: most agencies build websites that look neat but fail to sell. They focus purely on visual bells and whistles, ignoring SEO structure, content clarity, and load speeds.
+              Over the years, I noticed that many websites prioritize appearance while overlooking performance, usability, and the customer journey. A beautiful website is important, but it should also load quickly, communicate clearly, and guide visitors toward taking action.
             </p>
             <p className="text-base text-muted-foreground leading-relaxed font-semibold text-foreground">
-              MecbillTech was born out of a mission to fix this. We build custom Next.js & React systems that combine technical engineering with audience psychology to turn visitors into clients.
+              That's why I founded MecbillTech, to build websites that combine clean development, thoughtful design, technical SEO, and a business-first strategy. Whether it's a portfolio, service website, or custom web application, my goal is to create digital experiences that help businesses grow with confidence.
             </p>
             
             <div className="pt-4">

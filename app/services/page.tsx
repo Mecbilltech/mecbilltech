@@ -1,6 +1,17 @@
 import ClientLayout from "@/components/ClientLayout";
 import Process from "@/components/Process";
-import { Globe, Cpu, GraduationCap, Briefcase, RefreshCw, LifeBuoy, Check, ArrowRight, ArrowUpRight } from "lucide-react";
+import {
+  Globe,
+  Cpu,
+  RefreshCw,
+  Search,
+  Network,
+  LifeBuoy,
+  ArrowRight,
+  ArrowUpRight,
+  PenTool,
+  Check,
+} from "lucide-react";
 import Link from "next/link";
 
 export const metadata = {
@@ -15,55 +26,106 @@ const services = [
     icon: Globe,
     title: "Custom Web Development",
     tagline: "Zero templates. Pure performance.",
-    description: "Every site is custom-architected from the ground up to match your brand and business goals. We write clean, hand-crafted Next.js and React code with no page builder overhead — delivering Lighthouse scores above 99 and blazing-fast mobile loads.",
-    features: ["Next.js & React Framework", "0% Page Builder Bloat", "99+ Lighthouse Scores", "Responsive Mobile-First UX"],
+    description:
+      "Every website is custom-built from the ground up to reflect your brand and achieve your business goals. We develop clean, scalable applications with Next.js and React—free from page builder bloat—delivering exceptional speed, responsiveness, and a seamless user experience across all devices.",
+    features: [
+      "Next.js & React Development",
+      "Hand-Coded Performance",
+      "Mobile-First Responsive Design",
+      "Optimized Core Web Vitals",
+    ],
     accent: "blue",
   },
   {
     number: "02",
     icon: Cpu,
-    title: "Web Apps & Custom Systems",
-    tagline: "Automate your operations.",
-    description: "Build responsive portals, dashboards, and workflow engines tailored for your business. Whether it's a student portal, a WhatsApp reservation pipeline, or a custom CRM — we architect it from database schema to final UI.",
-    features: ["Custom Database Architecture", "Secure User Authentication", "API & Payment Integrations", "Real-time Workflows"],
+    title: "Web Applications & Custom Systems",
+    tagline: "Software built around your workflow.",
+    description:
+      "We design and develop secure, scalable web applications tailored to the way your business operates. Whether you need a customer portal, booking platform, CRM, inventory system, or internal dashboard, every solution is engineered to improve efficiency and automate repetitive tasks.",
+    features: [
+      "Custom Database Architecture",
+      "Secure User Authentication",
+      "API & Payment Integrations",
+      "Real-Time Workflows",
+    ],
     accent: "indigo",
   },
   {
     number: "03",
     icon: RefreshCw,
     title: "Website Redesign & Migration",
-    tagline: "From slow and outdated to elite.",
-    description: "We rebuild slow or broken legacy websites using modern standards with zero downtime. Your existing search authority and content are preserved — and your new speed scores will show the difference immediately on day one.",
-    features: ["UX Flow Auditing", "Database & Asset Migration", "Zero-Downtime Deployment", "Preserved Search Authority"],
+    tagline: "Modern performance without starting over.",
+    description:
+      "Transform outdated or underperforming websites into fast, modern digital experiences. We carefully migrate your content, preserve your search visibility, and deploy your new website with minimal disruption to your business.",
+    features: [
+      "UX & Performance Audit",
+      "Content & Database Migration",
+      "Minimal-Downtime Deployment",
+      "SEO Preservation",
+    ],
     accent: "purple",
   },
   {
     number: "04",
-    icon: Briefcase,
+    icon: Search,
     title: "Search Engine Optimization",
-    tagline: "Stop being invisible to Google.",
-    description: "A beautiful website buried on page 5 is useless. We integrate technical SEO into the foundation: semantic markup, schema structured data, Core Web Vitals optimization, and Google Search Console configuration from day one.",
-    features: ["Technical SEO Schema", "On-Page Keyword Strategy", "Speed Optimization Indexing", "Google Search Console Setup"],
+    tagline: "Get found by the people searching for you.",
+    description:
+      "A beautiful website means little if customers can't find it. We build SEO into the foundation of every project with technical optimization, structured data, Core Web Vitals improvements, and search engine best practices that increase your visibility.",
+    features: [
+      "Technical SEO Optimization",
+      "Schema Structured Data",
+      "Core Web Vitals Optimization",
+      "Google Search Console Setup",
+    ],
     accent: "emerald",
   },
   {
     number: "05",
-    icon: GraduationCap,
-    title: "High-Converting Copywriting",
-    tagline: "Words that work as hard as code.",
-    description: "Copy is the engine of every website. We craft compelling, SEO-friendly messaging that speaks directly to your users' pain points, builds trust, and drives them toward your most important actions.",
-    features: ["Audience Psychology Angles", "SEO-Optimized Layout Copy", "Clear Call-to-Action Flows", "Value Proposition Alignment"],
+    icon: PenTool,
+    title: "Conversion Copywriting",
+    tagline: "Messaging that turns visitors into customers.",
+    description:
+      "Great design attracts attention, but persuasive messaging drives action. We write clear, conversion-focused copy that communicates your value, builds trust, improves search visibility, and encourages visitors to take the next step.",
+    features: [
+      "Conversion-Focused Messaging",
+      "SEO-Optimized Website Copy",
+      "Strategic Call-to-Actions",
+      "Clear Value Proposition",
+    ],
     accent: "amber",
   },
   {
     number: "06",
     icon: LifeBuoy,
-    title: "Website Management & Support",
-    tagline: "Stay fast, secure, and always online.",
-    description: "We provide ongoing technical care: dependency updates, daily cloud backups, proactive security monitoring, and performance audits. You focus on your business — we make sure your site is always at 100%.",
-    features: ["Daily Cloud Backups", "Security Firewalls & Patches", "Package Dependency Updates", "Ongoing Performance Audits"],
+    title: "Website Maintenance & Support",
+    tagline: "Reliable performance long after launch.",
+    description:
+      "Your website deserves ongoing care. We provide proactive maintenance, security monitoring, software updates, cloud backups, and regular performance optimization to keep your website secure, reliable, and running at its best.",
+    features: [
+      "Daily Cloud Backups",
+      "Security Monitoring & Patches",
+      "Framework & Software Updates",
+      "Performance Optimization",
+    ],
     accent: "rose",
   },
+  {
+  number: "07",
+  icon: Network,
+  title: "API Development & Integrations",
+  tagline: "Powering modern applications with secure APIs.",
+  description:
+    "We design and develop secure, scalable RESTful and real-time APIs using Laravel and Node.js. Whether you're connecting mobile apps, third-party services, payment gateways, or building a backend for your SaaS product, we create reliable APIs that are fast, maintainable, and built to scale.",
+  features: [
+    "Laravel & Node.js APIs",
+    "RESTful & Real-Time Architecture",
+    "Third-Party API Integrations",
+    "Authentication & Security (JWT/OAuth)",
+  ],
+  accent: "amber",
+},
 ];
 
 const accentBg: Record<string, string> = {

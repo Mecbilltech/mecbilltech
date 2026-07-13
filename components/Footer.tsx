@@ -111,16 +111,22 @@ export default function Footer() {
                 <a href="#services" onClick={(e) => handleLinkClick(e, "#services")} className="text-sm text-muted-foreground hover:text-primary transition-colors">Custom Web Dev</a>
               </li>
               <li>
-                <a href="#services" onClick={(e) => handleLinkClick(e, "#services")} className="text-sm text-muted-foreground hover:text-primary transition-colors">Web Apps & Systems</a>
+                <a href="#services" onClick={(e) => handleLinkClick(e, "#services")} className="text-sm text-muted-foreground hover:text-primary transition-colors">Web Apps</a>
               </li>
               <li>
                 <a href="#services" onClick={(e) => handleLinkClick(e, "#services")} className="text-sm text-muted-foreground hover:text-primary transition-colors">Website Redesign</a>
               </li>
               <li>
-                <a href="#services" onClick={(e) => handleLinkClick(e, "#services")} className="text-sm text-muted-foreground hover:text-primary transition-colors">SEO Optimization</a>
+                <a href="#services" onClick={(e) => handleLinkClick(e, "#services")} className="text-sm text-muted-foreground hover:text-primary transition-colors">Search Optimization</a>
               </li>
               <li>
-                <a href="#services" onClick={(e) => handleLinkClick(e, "#services")} className="text-sm text-muted-foreground hover:text-primary transition-colors">Copywriting</a>
+                <a href="#services" onClick={(e) => handleLinkClick(e, "#services")} className="text-sm text-muted-foreground hover:text-primary transition-colors">Conversion Copywriting</a>
+              </li>
+              <li>
+                <a href="#services" onClick={(e) => handleLinkClick(e, "#services")} className="text-sm text-muted-foreground hover:text-primary transition-colors">Website Maintenance</a>
+              </li>
+              <li>
+                <a href="#services" onClick={(e) => handleLinkClick(e, "#services")} className="text-sm text-muted-foreground hover:text-primary transition-colors">API Development</a>
               </li>
             </ul>
           </div>

@@ -6,38 +6,38 @@ import { Cpu, Eye, LineChart, ShieldAlert, Award, Star } from "lucide-react";
 import Image from "next/image";
 
 const tabs = [
+ {
+  id: "backstory",
+  label: "Business First",
+  icon: Cpu,
+  title: "Building Websites That Solve Business Problems",
+  content:
+    "A successful website is more than clean code or beautiful visuals. Every project begins by understanding your business, your audience, and what motivates people to take action. That strategy shapes every design and development decision, creating websites that build trust and generate real results.",
+},
   {
-    id: "backstory",
-    label: "The Backstory",
-    icon: Cpu,
-    title: "Lived on Both Sides of the Screen",
-    content:
-      "Before writing our first line of code, we spent years writing articles, producing copy, and building audiences online. This taught us audience psychology: how users read, what builds trust, and why page design is useless if the copy doesn't communicate. We approach coding with a marketer's mindset.",
-  },
+  id: "conversion",
+  label: "Built to Convert",
+  icon: LineChart,
+  title: "Designed to Turn Visitors into Customers",
+  content:
+    "Every section, headline, and call-to-action is intentionally crafted to guide visitors toward making contact, booking a service, or becoming a customer. The goal isn't just a beautiful website, it's a website that helps your business grow.",
+},
   {
-    id: "conversion",
-    label: "Built to Convert",
-    icon: LineChart,
-    title: "Websites Built for Growth, Not Just Aesthetics",
-    content:
-      "Every layout decision, call-to-action button, and headline is crafted to turn your random website visitors into high-paying, committed clients. We don't just build websites to look pretty; we build systems designed to increase inquiries, bookings, and revenue.",
-  },
+  id: "clean-code",
+  label: "Quality Code",
+  icon: ShieldAlert,
+  title: "Fast, Clean & Built to Last",
+  content:
+    "Every project is developed with clean, maintainable code using modern technologies like React, Next.js, and TypeScript. The result is a fast, scalable website that's easy to maintain, performs exceptionally well, and provides a solid foundation for future growth.",
+},
   {
-    id: "clean-code",
-    label: "No Page Builders",
-    icon: ShieldAlert,
-    title: "100% Hand-Crafted, Maintainable Code",
-    content:
-      "We refuse to use bloated WordPress templates or drag-and-drop page builders. Every line of React, Next.js, and TypeScript is written by hand. This ensures a blazing fast, future-proof site that search engine crawlers understand and future developers will love.",
-  },
-  {
-    id: "seo",
-    label: "SEO From Day One",
-    icon: Eye,
-    title: "Stop Being Invisible to Google",
-    content:
-      "A gorgeous website is useless if it's buried on page 5 of search results. We bake technical SEO into the foundation. From lightning-fast Core Web Vitals to proper semantic layout hierarchies and structured schema markup, we make sure search engines index your brand properly.",
-  },
+  id: "seo",
+  label: "SEO Ready",
+  icon: Eye,
+  title: "Built to Be Found Online",
+  content:
+    "Search visibility starts with a strong technical foundation. Every website is built with semantic HTML, fast loading speeds, responsive performance, and SEO best practices to help search engines understand your content and improve your online presence.",
+},
 ];
 
 export default function About() {
@@ -111,42 +111,46 @@ export default function About() {
         </div>
 
         {/* Profile Card / High Tech Placeholder Right */}
-        <div className="lg:col-span-5 flex justify-center">
-          <div className="glass-panel relative w-full max-w-[340px] rounded-2xl border border-border bg-card p-6 shadow-sm overflow-hidden">
-            {/* Profile Avatar Frame */}
-            <div className="relative w-full h-[280px] rounded-xl overflow-hidden bg-muted/10 flex items-center justify-center border border-border">
-              <div className="relative flex flex-col items-center gap-4 text-center z-10">
-                <div className="relative size-24 rounded-full border border-border bg-muted flex items-center justify-center shadow-sm">
-                  <Image
-                    src="/logo.png"
-                    alt="MecbillTech founder"
-                    width={80}
-                    height={80}
-                    className="rounded-full"
-                  />
-                  <div className="absolute bottom-0 right-0 size-3 rounded-full bg-green-500 border border-background" />
-                </div>
-                <div>
-                  <h4 className="font-bold text-foreground text-base">Alade Odunayo</h4>
-                  <p className="text-[10px] text-muted-foreground font-mono tracking-widest uppercase">Founder & Web Architect</p>
-                  <p className="text-[9px] text-muted-foreground/60 font-mono tracking-wider">Ondo, Nigeria</p>
-                </div>
-              </div>
-            </div>
-
-            {/* Core Metrics */}
-            <div className="mt-6 grid grid-cols-2 gap-4 border-t border-border pt-4 text-center">
-              <div>
-                <span className="text-[9px] text-muted-foreground uppercase font-bold tracking-wider">Philosophy</span>
-                <p className="text-sm font-bold text-foreground mt-1">Marketer Mindset</p>
-              </div>
-              <div>
-                <span className="text-[9px] text-muted-foreground uppercase font-bold tracking-wider">Code Base</span>
-                <p className="text-sm font-bold text-primary mt-1">100% Bespoke</p>
-              </div>
-            </div>
-          </div>
+       <div className="lg:col-span-5 flex justify-center">
+  <div className="glass-panel relative w-full max-w-[340px] rounded-2xl border border-border bg-card p-6 shadow-sm overflow-hidden transition-all duration-300 hover:shadow-md hover:-translate-y-1">
+    
+    {/* Profile Avatar Frame */}
+    <div className="relative w-full rounded-xl overflow-hidden bg-muted/20 py-8 px-4 flex items-center justify-center border border-border/60">
+      {/* Decorative background glow */}
+      <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent pointer-events-none" />
+      
+      <div className="relative flex flex-col items-center gap-4 text-center z-10">
+        <div className="relative size-24 rounded-full border-2 border-background bg-muted flex items-center justify-center shadow-md ring-1 ring-border/50">
+          <Image
+            src="/logo.png"
+            alt="MecbillTech founder"
+            width={88}
+            height={88}
+            className="rounded-full object-cover"
+          />
         </div>
+        <div>
+          <h4 className="font-bold text-foreground text-base tracking-tight">Alade Odunayo</h4>
+          <p className="text-[10px] text-muted-foreground font-mono tracking-widest uppercase mt-1">Founder & Web Architect</p>
+          <p className="text-[9px] text-muted-foreground/60 font-mono tracking-wider mt-0.5">Ondo, Nigeria</p>
+        </div>
+      </div>
+    </div>
+
+    {/* Core Metrics */}
+    <div className="mt-5 grid grid-cols-2 gap-4 border-t border-border/60 pt-4 text-center">
+      <div className="flex flex-col justify-between">
+        <span className="text-[9px] text-muted-foreground uppercase font-bold tracking-widest font-mono">Philosophy</span>
+        <p className="text-xs font-bold text-foreground mt-1.5 balance">Marketer Mindset</p>
+      </div>
+      <div className="flex flex-col justify-between">
+        <span className="text-[9px] text-muted-foreground uppercase font-bold tracking-widest font-mono">Code Base</span>
+        <p className="text-xs font-bold text-primary mt-1.5 uppercase tracking-wider">100% Bespoke</p>
+      </div>
+    </div>
+    
+  </div>
+</div>
       </div>
     </section>
   );
