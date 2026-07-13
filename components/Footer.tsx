@@ -61,7 +61,7 @@ export default function Footer() {
               </span>
             </Link>
             <p className="text-sm text-muted-foreground leading-relaxed max-w-sm mb-6">
-              Engineering digital experiences that drive business growth. Helping startups, brands, and enterprises build beautiful, scalable, and modern digital solutions.
+              We build custom, hand-crafted Next.js & React websites with a marketer's mindset. Optimized for conversions, built for speed, and baked with technical SEO.
             </p>
             {/* Socials */}
             <div className="flex gap-4">
@@ -74,7 +74,7 @@ export default function Footer() {
               <a href="https://twitter.com/mecbilltech" target="_blank" rel="noopener" className="text-muted-foreground hover:text-foreground">
                 <Twitter className="size-5" />
               </a>
-              <a href="https://wa.me/2348123456789" target="_blank" rel="noopener" className="text-muted-foreground hover:text-foreground">
+              <a href="https://wa.me/2348105219630" target="_blank" rel="noopener" className="text-muted-foreground hover:text-foreground">
                 <MessageCircle className="size-5" />
               </a>
             </div>
@@ -107,19 +107,19 @@ export default function Footer() {
             <h4 className="font-semibold text-sm uppercase tracking-wider mb-4 text-foreground">Services</h4>
             <ul className="space-y-2.5">
               <li>
-                <a href="#services" onClick={(e) => handleLinkClick(e, "#services")} className="text-sm text-muted-foreground hover:text-primary transition-colors">Business Websites</a>
+                <a href="#services" onClick={(e) => handleLinkClick(e, "#services")} className="text-sm text-muted-foreground hover:text-primary transition-colors">Custom Web Dev</a>
               </li>
               <li>
-                <a href="#services" onClick={(e) => handleLinkClick(e, "#services")} className="text-sm text-muted-foreground hover:text-primary transition-colors">Custom Web Apps</a>
-              </li>
-              <li>
-                <a href="#services" onClick={(e) => handleLinkClick(e, "#services")} className="text-sm text-muted-foreground hover:text-primary transition-colors">Restaurant Systems</a>
-              </li>
-              <li>
-                <a href="#services" onClick={(e) => handleLinkClick(e, "#services")} className="text-sm text-muted-foreground hover:text-primary transition-colors">School Management</a>
+                <a href="#services" onClick={(e) => handleLinkClick(e, "#services")} className="text-sm text-muted-foreground hover:text-primary transition-colors">Web Apps & Systems</a>
               </li>
               <li>
                 <a href="#services" onClick={(e) => handleLinkClick(e, "#services")} className="text-sm text-muted-foreground hover:text-primary transition-colors">Website Redesign</a>
+              </li>
+              <li>
+                <a href="#services" onClick={(e) => handleLinkClick(e, "#services")} className="text-sm text-muted-foreground hover:text-primary transition-colors">SEO Optimization</a>
+              </li>
+              <li>
+                <a href="#services" onClick={(e) => handleLinkClick(e, "#services")} className="text-sm text-muted-foreground hover:text-primary transition-colors">Copywriting</a>
               </li>
             </ul>
           </div>

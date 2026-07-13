@@ -6,45 +6,39 @@ import { Globe, Cpu, Utensils, GraduationCap, Briefcase, RefreshCw, LifeBuoy, Ch
 const services = [
   {
     icon: Globe,
-    title: "Business Websites",
-    description: "Premium websites designed to build trust, establish brand authority, and maximize visitor conversions.",
-    features: ["SEO Optimization", "Conversion Rate Audits", "Blazing Fast Page Speeds", "Lead Capture Integration"],
+    title: "Custom Web Development",
+    description: "No templates. No cookie-cutter layouts. Every site is custom architected from the ground up to match your brand, load instantly, and turn visitors into clients.",
+    features: ["Next.js & React Framework", "0% Page Builder Bloat", "99+ Lighthouse Scores", "Responsive Mobile-First UX"],
   },
   {
     icon: Cpu,
-    title: "Custom Web Applications",
-    description: "Robust, tailored web systems designed to automate workflows and handle complex operations.",
-    features: ["Scalable Architecture", "API Integration", "Secure Authentication", "Real-time Dashboards"],
-  },
-  {
-    icon: Utensils,
-    title: "Restaurant Websites",
-    description: "Fully-featured systems with custom menus, reservation management, and WhatsApp ordering integrations.",
-    features: ["Digital Menu Display", "Table Reservations", "WhatsApp Order Dispatch", "Delivery Management"],
-  },
-  {
-    icon: GraduationCap,
-    title: "School Management Systems",
-    description: "Comprehensive education management suites connecting students, teachers, parents, and administrative staff.",
-    features: ["Student Portals", "Attendance Tracking", "Report Card Managers", "Tuition Payment Portals"],
-  },
-  {
-    icon: Briefcase,
-    title: "Portfolio Websites",
-    description: "Exquisite visual portfolios designed to position individuals, agencies, and companies at the top of their fields.",
-    features: ["Premium Typography", "Case Study Layouts", "Interactive Showcases", "Command Palette Hooks"],
+    title: "Web Apps & Custom Systems",
+    description: "Automate manual operations, connect third-party APIs, and build responsive portals for your business (like student portals or WhatsApp reservation tools).",
+    features: ["Custom Database Architecture", "Secure User Authentication", "API & Payment Integrations", "Real-time Workflows"],
   },
   {
     icon: RefreshCw,
-    title: "Website Redesign",
-    description: "Modernize slow, outdated legacy websites into stunning, state-of-the-art digital experiences.",
-    features: ["UX Refactoring", "Mobile-First Adaptation", "Tech Stack Modernization", "Retained SEO Value"],
+    title: "Website Redesign & Migration",
+    description: "If your current site is slow or outdated, we rebuild it using modern standards with zero downtime and complete protection of your existing search rankings.",
+    features: ["UX Flow Auditing", "Database & Asset Migration", "Zero-Downtime Deployment", "Preserved Search Authority"],
+  },
+  {
+    icon: Briefcase,
+    title: "Search Engine Optimization",
+    description: "Your site could be beautiful and completely invisible to Google. We fix that by integrating technical SEO, schema markups, and keywords from the start.",
+    features: ["Technical SEO Schema", "On-Page Keyword Strategy", "Speed Optimization Indexing", "Google Search Console Setup"],
+  },
+  {
+    icon: GraduationCap,
+    title: "High-Converting Copywriting",
+    description: "Copy is the actual engine of your website. We craft compelling, SEO-friendly messaging that speaks directly to your users' pain points and drives action.",
+    features: ["Audience Psychology Angles", "SEO-Optimized Layout Copy", "Clear Call-to-Action Flows", "Value Proposition Alignment"],
   },
   {
     icon: LifeBuoy,
-    title: "Maintenance & Support",
-    description: "Continuous monitoring, updates, patches, and feature upgrades to ensure your website runs 24/7.",
-    features: ["Daily Backups", "Security Patches", "Content Updates", "Lighthouse Score Maintenance"],
+    title: "Website Management & Support",
+    description: "Ongoing technical maintenance, package updates, daily cloud backups, and proactive security monitoring to ensure your site is blazing fast 24/7.",
+    features: ["Daily Cloud Backups", "Security Firewalls & Patches", "Package Dependency Updates", "Ongoing Performance Audits"],
   },
 ];
 
@@ -52,9 +46,9 @@ export default function Services() {
   return (
     <section id="services" className="py-12 relative">
       <div className="text-center max-w-2xl mx-auto mb-16">
-        <h2 className="text-xs uppercase font-extrabold tracking-[0.25em] text-primary mb-3">Our Expertise</h2>
+        <h2 className="text-xs uppercase font-extrabold tracking-[0.25em] text-primary mb-3">Services</h2>
         <p className="text-3xl font-extrabold text-foreground tracking-tight sm:text-4xl">
-          Digital Solutions Engineered for Enterprise Scale.
+          Engineered for Performance, Built to Convert.
         </p>
       </div>
 

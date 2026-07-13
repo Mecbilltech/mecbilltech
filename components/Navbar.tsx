@@ -8,16 +8,16 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 
 const navLinks = [
-  { name: "Home", href: "#home" },
-  { name: "About", href: "#about" },
-  { name: "Services", href: "#services" },
-  { name: "Projects", href: "#projects" },
-  { name: "Process", href: "#process" },
-  { name: "Tech Stack", href: "#tech-stack" },
-  { name: "Testimonials", href: "#testimonials" },
-  { name: "FAQ", href: "#faq" },
-  { name: "Blog", href: "#blog" },
-  { name: "Contact", href: "#contact" },
+  { name: "Home", href: "/" },
+  { name: "About", href: "/about" },
+  { name: "Services", href: "/services" },
+  { name: "Projects", href: "/projects" },
+  // { name: "Process", href: "#process" },
+  // { name: "Tech Stack", href: "#tech-stack" },
+  // { name: "Testimonials", href: "#testimonials" },
+  // { name: "FAQ", href: "#faq" },
+  { name: "Blog", href: "/blog" },
+  { name: "Contact", href: "/contact" },
 ];
 
 export default function Navbar() {

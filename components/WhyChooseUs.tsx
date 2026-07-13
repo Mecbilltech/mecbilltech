@@ -4,21 +4,21 @@ import { motion } from "framer-motion";
 import { X, Check, ShieldCheck, Flame, Compass } from "lucide-react";
 
 const othersPoints = [
-  "Generic pre-built templates",
-  "Slow delivery and missed milestones",
-  "Poor communication & ghosting",
-  "Limited scalability and fragile code",
-  "Transactional relations (no support)",
-  "Unreliable support structures",
+  "Bloated pre-built templates (Elementor/Divi)",
+  "Slow page speeds and high visitor bounce rates",
+  "Copywriting that feels generic and robotic",
+  "Poor communication and post-launch ghosting",
+  "No SEO consideration during development",
+  "Transactional relation (fix it yourself)",
 ];
 
 const mecbillPoints = [
-  { text: "Business-focused bespoke designs", note: "Optimized for conversion" },
-  { text: "Fast development & rapid deployment", note: "Agile checkpoints" },
-  { text: "Reliable and structured communication", note: "24/7 client portal" },
-  { text: "Scalable architecture & performance", note: "TypeScript & Next.js" },
-  { text: "Long-term advisory and partnership", note: "Strategy sessions" },
-  { text: "Comprehensive support and backups", note: "Daily systems check" },
+  { text: "Hand-crafted bespoke architectures", note: "Optimized specifically for conversions" },
+  { text: "Blazing-fast page speeds (Next.js)", note: "Built for instant mobile & desktop loading" },
+  { text: "Marketing-first content & layout", note: "Designed to drive user action and trust" },
+  { text: "Transparent, direct communication", note: "Collaborative Slack/WhatsApp channels" },
+  { text: "Day-one SEO foundation built-in", note: "Schema markups, technical SEO compliance" },
+  { text: "Long-term partnership & optimization", note: "Ongoing support and performance audits" },
 ];
 
 export default function WhyChooseUs() {
@@ -27,7 +27,7 @@ export default function WhyChooseUs() {
       <div className="text-center max-w-2xl mx-auto mb-16">
         <h2 className="text-xs uppercase font-extrabold tracking-[0.25em] text-primary mb-3">Comparison</h2>
         <p className="text-3xl font-extrabold text-foreground tracking-tight sm:text-4xl">
-          Why Leading Brands Choose MecbillTech.
+          Why Ambitious Businesses Choose MecbillTech.
         </p>
       </div>
 
@@ -48,7 +48,7 @@ export default function WhyChooseUs() {
               <h3 className="text-xl font-bold text-foreground">Typical Agencies</h3>
             </div>
             <p className="text-sm text-muted-foreground mb-8">
-              Many agencies rely on quick templates that fail to scale, suffer from sluggish speeds, and lack a strategy aligned with business objectives.
+              Many agencies rely on quick, bloated templates that load slowly, fail to communicate, and lack a strategy aligned with your business growth.
             </p>
             <ul className="space-y-4">
               {othersPoints.map((point) => (
@@ -86,7 +86,7 @@ export default function WhyChooseUs() {
               <span className="rounded-full bg-primary px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-white">Recommended</span>
             </div>
             <p className="text-sm text-muted-foreground mb-8">
-              We construct custom web infrastructures tailored to conversions, built using top-tier codebases, and supported by robust security protocols.
+              We build custom, hand-crafted web solutions engineered to convert traffic into clients, optimized for speed, and backed by a marketing mindset.
             </p>
             <ul className="space-y-4">
               {mecbillPoints.map((point) => (
@@ -102,7 +102,7 @@ export default function WhyChooseUs() {
           </div>
           <div className="border-t border-primary/20 mt-8 pt-4 flex gap-2 items-center text-xs text-primary font-bold">
             <ShieldCheck className="size-4" />
-            <span>Enterprise-Grade Scalability</span>
+            <span>High-Performing Web Assets</span>
           </div>
         </motion.div>
       </div>
