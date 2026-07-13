@@ -1,9 +1,10 @@
 "use client";
 
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { ExternalLink, BookOpen } from "lucide-react";
+import { useRef, useState, useCallback } from "react";
+import { motion } from "framer-motion";
+import { ExternalLink, BookOpen, ChevronLeft, ChevronRight, ArrowRight } from "lucide-react";
 import { Github } from "@/components/Icons";
+import Link from "next/link";
 
 interface Project {
   id: string;
@@ -105,137 +106,159 @@ const projects: Project[] = [
   },
 ];
 
-type FilterType = "all" | "websites" | "web-apps" | "systems";
+const CARD_WIDTH = 340;
+const CARD_GAP = 24;
 
 export default function Projects() {
-  const [filter, setFilter] = useState<FilterType>("all");
+  const trackRef = useRef<HTMLDivElement>(null);
+  const [current, setCurrent] = useState(0);
+  const max = projects.length - 1;
 
-  const filteredProjects = projects.filter(
-    (p) => filter === "all" || p.category === filter
-  );
+  const scrollTo = useCallback((index: number) => {
+    const clamped = Math.max(0, Math.min(index, max));
+    setCurrent(clamped);
+    trackRef.current?.scrollTo({ left: clamped * (CARD_WIDTH + CARD_GAP), behavior: "smooth" });
+  }, [max]);
 
   return (
     <section id="projects" className="py-12 relative">
-      <div className="text-center max-w-2xl mx-auto mb-12">
-        <h2 className="text-xs uppercase font-extrabold tracking-[0.25em] text-primary mb-3">Our Work</h2>
-        <p className="text-3xl font-extrabold text-foreground tracking-tight sm:text-4xl">
-          Case Studies in Engineering and Design.
-        </p>
+      {/* Header + Arrows */}
+      <div className="flex flex-col sm:flex-row items-start sm:items-end justify-between gap-4 mb-12">
+        <div>
+          <h2 className="text-xs uppercase font-extrabold tracking-[0.25em] text-primary mb-3">Our Work</h2>
+          <p className="text-3xl font-extrabold text-foreground tracking-tight sm:text-4xl max-w-lg">
+            Real Code. Real Business Results.
+          </p>
+        </div>
+        <div className="flex items-center gap-3 shrink-0">
+          <button
+            onClick={() => scrollTo(current - 1)}
+            disabled={current === 0}
+            aria-label="Previous project"
+            className="size-10 rounded-full border border-border bg-card flex items-center justify-center text-muted-foreground transition-all hover:border-primary hover:text-primary disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer"
+          >
+            <ChevronLeft className="size-4" />
+          </button>
+          <span className="text-xs font-mono text-muted-foreground tabular-nums w-10 text-center">
+            {current + 1} / {projects.length}
+          </span>
+          <button
+            onClick={() => scrollTo(current + 1)}
+            disabled={current === max}
+            aria-label="Next project"
+            className="size-10 rounded-full border border-border bg-card flex items-center justify-center text-muted-foreground transition-all hover:border-primary hover:text-primary disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer"
+          >
+            <ChevronRight className="size-4" />
+          </button>
+        </div>
       </div>
 
-      {/* Filter Menu */}
-      <div className="flex justify-center gap-2 mb-16 flex-wrap">
-        {(["all", "websites", "web-apps", "systems"] as FilterType[]).map((type) => (
-          <button
-            key={type}
-            onClick={() => setFilter(type)}
-            className={`rounded-full px-5 py-2 text-xs font-semibold capitalize transition-all ${
-              filter === type
-                ? "bg-primary text-primary-foreground"
-                : "text-muted-foreground hover:bg-muted hover:text-foreground border border-border"
-            }`}
+      {/* Carousel Track */}
+      <div
+        ref={trackRef}
+        className="flex gap-6 overflow-x-auto pb-4 snap-x snap-mandatory"
+        style={{ scrollbarWidth: "none" }}
+      >
+        {projects.map((project, index) => (
+          <motion.div
+            key={project.id}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-40px" }}
+            transition={{ delay: Math.min(index * 0.05, 0.25), duration: 0.4 }}
+            className="flex-none snap-start"
+            style={{ width: CARD_WIDTH }}
           >
-            {type.replace("-", " ")}
-          </button>
+            {/* Visual Preview */}
+            <div
+              className={`relative w-full aspect-[4/3] rounded-2xl bg-gradient-to-br ${project.desktopBg} flex flex-col p-4 overflow-hidden border border-white/10 mb-4 group`}
+            >
+              {/* Browser dots */}
+              <div className="flex gap-1.5 mb-3">
+                <div className="size-2 rounded-full bg-white/20" />
+                <div className="size-2 rounded-full bg-white/20" />
+                <div className="size-2 rounded-full bg-white/20" />
+              </div>
+              <div className="flex-1 flex items-center justify-center">
+                <div className="text-center">
+                  <p className="text-[10px] uppercase tracking-widest text-white/40 font-mono mb-1">{project.tag}</p>
+                  <h4 className="text-lg font-bold text-white/90">{project.title}</h4>
+                </div>
+              </div>
+
+              {/* Hover overlay with buttons */}
+              <div className="absolute inset-0 bg-black/60 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-3">
+                <Link
+                  href={`/projects/${project.id}`}
+                  className="flex items-center gap-1.5 rounded-full bg-white/10 border border-white/20 px-4 py-2 text-xs font-semibold text-white hover:bg-white/20 transition-colors"
+                >
+                  <BookOpen className="size-3.5" />
+                  Case Study
+                </Link>
+                <a
+                  href={project.demoUrl}
+                  target="_blank"
+                  rel="noopener"
+                  className="flex items-center gap-1.5 rounded-full bg-white/10 border border-white/20 px-4 py-2 text-xs font-semibold text-white hover:bg-white/20 transition-colors"
+                >
+                  <ExternalLink className="size-3.5" />
+                  Live Demo
+                </a>
+              </div>
+            </div>
+
+            {/* Card Info */}
+            <div className="glass-panel rounded-2xl border border-border bg-card p-5">
+              <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-primary">
+                {project.tag}
+              </span>
+              <h3 className="text-base font-bold text-foreground mt-1 mb-2">{project.title}</h3>
+              <p className="text-xs text-muted-foreground leading-relaxed mb-4">{project.description}</p>
+
+              {/* Tech Badges */}
+              <div className="flex flex-wrap gap-1 mb-4">
+                {project.tech.map((t) => (
+                  <span key={t} className="rounded-md bg-muted px-2 py-0.5 text-[10px] font-semibold text-muted-foreground border border-border">
+                    {t}
+                  </span>
+                ))}
+              </div>
+
+              {/* Results + Link */}
+              <div className="border-t border-border/60 pt-3 flex items-center justify-between gap-2">
+                <p className="text-[10px] text-muted-foreground leading-snug flex-1">{project.results}</p>
+                <Link
+                  href={`/projects/${project.id}`}
+                  className="inline-flex items-center gap-1 text-[11px] font-bold text-primary whitespace-nowrap hover:underline"
+                >
+                  Read More
+                  <ArrowRight className="size-3" />
+                </Link>
+              </div>
+            </div>
+          </motion.div>
         ))}
       </div>
 
-      {/* Projects List */}
-      <div className="flex flex-col gap-20">
-        <AnimatePresence mode="popLayout">
-          {filteredProjects.map((project, index) => (
-            <motion.div
-              key={project.id}
-              layout
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.4 }}
-              className={`flex flex-col gap-10 items-center lg:flex-row ${
-                index % 2 === 1 ? "lg:flex-row-reverse" : ""
-              }`}
-            >
-              {/* Project Visual (gradient preview) */}
-              <div className="w-full lg:w-1/2">
-                <div className={`relative w-full aspect-[4/3] rounded-2xl bg-gradient-to-br ${project.desktopBg} flex flex-col p-4 overflow-hidden border border-white/10`}>
-                  {/* Minimal browser chrome */}
-                  <div className="flex items-center gap-1.5 mb-3">
-                    <div className="size-2 rounded-full bg-white/20" />
-                    <div className="size-2 rounded-full bg-white/20" />
-                    <div className="size-2 rounded-full bg-white/20" />
-                  </div>
-                  <div className="flex-1 flex items-center justify-center">
-                    <div className="text-center">
-                      <p className="text-[10px] uppercase tracking-widest text-white/40 font-mono mb-1">{project.tag}</p>
-                      <h4 className="text-lg font-bold text-white/90">{project.title}</h4>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Project Meta Info */}
-              <div className="w-full lg:w-1/2 flex flex-col justify-center">
-                <span className="text-xs font-mono font-semibold uppercase tracking-wider text-primary mb-3">
-                  {project.tag}
-                </span>
-                <h3 className="text-2xl font-bold text-foreground tracking-tight mb-4">
-                  {project.title}
-                </h3>
-                <p className="text-sm text-muted-foreground leading-relaxed mb-6">
-                  {project.description}
-                </p>
-
-                {/* Tech Badges */}
-                <div className="flex flex-wrap gap-1.5 mb-6">
-                  {project.tech.map((t) => (
-                    <span
-                      key={t}
-                      className="rounded-md bg-muted px-2 py-0.5 text-[10px] font-semibold text-muted-foreground border border-border"
-                    >
-                      {t}
-                    </span>
-                  ))}
-                </div>
-
-                {/* Business Outcome */}
-                <div className="rounded-xl border border-border bg-muted/20 p-4 mb-6">
-                  <span className="text-[9px] uppercase font-bold text-muted-foreground tracking-wider">Business Outcome</span>
-                  <p className="text-sm font-semibold text-foreground mt-1">{project.results}</p>
-                </div>
-
-                {/* Action Buttons */}
-                <div className="flex flex-wrap gap-3">
-                  <button
-                    onClick={() => { window.location.href = `/projects/${project.id}`; }}
-                    className="flex items-center gap-1.5 rounded-full bg-primary text-primary-foreground px-4 py-2 text-xs font-semibold hover:bg-primary/90 transition-colors"
-                  >
-                    <BookOpen className="size-3.5" />
-                    Case Study
-                  </button>
-                  <a
-                    href={project.demoUrl}
-                    target="_blank"
-                    rel="noopener"
-                    className="flex items-center gap-1.5 rounded-full border border-border bg-background px-4 py-2 text-xs font-semibold text-foreground hover:bg-muted transition-colors"
-                  >
-                    <ExternalLink className="size-3.5" />
-                    Live Demo
-                  </a>
-                  <a
-                    href={project.githubUrl}
-                    target="_blank"
-                    rel="noopener"
-                    className="flex items-center gap-1.5 rounded-full border border-border bg-background px-4 py-2 text-xs font-semibold text-foreground hover:bg-muted transition-colors"
-                  >
-                    <Github className="size-3.5" />
-                    Code
-                  </a>
-                </div>
-              </div>
-            </motion.div>
+      {/* Dots + CTA */}
+      <div className="flex items-center justify-between mt-6">
+        <div className="flex gap-1.5">
+          {projects.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => scrollTo(i)}
+              className={`transition-all rounded-full cursor-pointer ${current === i ? "bg-primary w-5 h-1.5" : "bg-border w-1.5 h-1.5 hover:bg-muted-foreground"}`}
+              aria-label={`Go to project ${i + 1}`}
+            />
           ))}
-        </AnimatePresence>
+        </div>
+        <Link
+          href="/projects"
+          className="inline-flex items-center gap-1.5 text-xs font-semibold text-primary hover:underline"
+        >
+          View All Projects
+          <ArrowRight className="size-3.5" />
+        </Link>
       </div>
     </section>
   );

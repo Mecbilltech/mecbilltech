@@ -85,19 +85,20 @@ export default function Footer() {
             <h4 className="font-semibold text-sm uppercase tracking-wider mb-4 text-foreground">Company</h4>
             <ul className="space-y-2.5">
               <li>
-                <a href="#home" onClick={(e) => handleLinkClick(e, "#home")} className="text-sm text-muted-foreground hover:text-primary transition-colors">Home</a>
+                <a href="/" className="text-sm text-muted-foreground hover:text-primary transition-colors">Home</a>
               </li>
               <li>
-                <a href="#about" onClick={(e) => handleLinkClick(e, "#about")} className="text-sm text-muted-foreground hover:text-primary transition-colors">About Us</a>
+                <a href="/about" className="text-sm text-muted-foreground hover:text-primary transition-colors">About Us</a>
               </li>
               <li>
-                <a href="#process" onClick={(e) => handleLinkClick(e, "#process")} className="text-sm text-muted-foreground hover:text-primary transition-colors">Development Process</a>
+                <a href="/services" className="text-sm text-muted-foreground hover:text-primary transition-colors">Our Services</a>
               </li>
               <li>
-                <a href="#testimonials" onClick={(e) => handleLinkClick(e, "#testimonials")} className="text-sm text-muted-foreground hover:text-primary transition-colors">Testimonials</a>
+                <a href="/project" className="text-sm text-muted-foreground hover:text-primary transition-colors">Our Projects</a>
               </li>
+             
               <li>
-                <a href="#blog" onClick={(e) => handleLinkClick(e, "#blog")} className="text-sm text-muted-foreground hover:text-primary transition-colors">Blog</a>
+                <a href="/blog" className="text-sm text-muted-foreground hover:text-primary transition-colors">Blog</a>
               </li>
             </ul>
           </div>

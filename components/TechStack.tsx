@@ -11,12 +11,12 @@ interface TechItem {
 }
 
 const techItems: TechItem[] = [
-  { name: "React", category: "frontend", level: 95, experience: "2+ Years" },
+  { name: "React", category: "frontend", level: 95, experience: "1+ Years" },
   { name: "Next.js", category: "frontend", level: 95, experience: "1+ Years" },
-  { name: "TypeScript", category: "frontend", level: 90, experience: "2+ Years" },
+  { name: "TypeScript", category: "frontend", level: 90, experience: "1+ Years" },
   { name: "Bootstrap CSS", category: "frontend", level: 95, experience: "3+ Years" },
   { name: "Tailwind CSS", category: "frontend", level: 85, experience: "1+ Years" },
-  { name: "JavaScript", category: "frontend", level: 95, experience: "4+ Years" },
+  { name: "JavaScript", category: "frontend", level: 95, experience: "3+ Years" },
   { name: "Node.js", category: "backend", level: 85, experience: "1+ Years" },
   { name: "Express", category: "backend", level: 80, experience: "1+ Years" },
   { name: "Laravel", category: "backend", level: 85, experience: "2+ Years" },
