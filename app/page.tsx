@@ -14,6 +14,7 @@ import Contact from "@/components/Contact";
 export default function Home() {
   return (
     <ClientLayout>
+      <div className="max-w-5xl mx-auto">
       <Hero />
       <About />
       <Services />
@@ -25,6 +26,7 @@ export default function Home() {
       <FAQ />
       <Blog />
       <Contact />
+    </div>
     </ClientLayout>
   );
 }

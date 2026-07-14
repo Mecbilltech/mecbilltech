@@ -217,7 +217,7 @@ export default function ServicesPage() {
         </div>
 
         {/* ── Process Timeline ────────────────────────────── */}
-        <div className="border-t border-border/40 pt-16 mb-24">
+        <div className="border-t border-border/40 pt-12 mb-24">
           <Process />
         </div>
 

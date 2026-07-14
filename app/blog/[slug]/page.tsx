@@ -80,7 +80,7 @@ export default async function BlogPostPage({
 
   return (
     <ClientLayout>
-      <div className="max-w-3xl mx-auto py-12">
+      <div className="max-w-5xl mx-auto py-12">
         {/* Back Link */}
         <Link
           href="/blog"

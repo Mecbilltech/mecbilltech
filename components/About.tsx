@@ -131,7 +131,7 @@ export default function About() {
         </div>
         <div>
           <h4 className="font-bold text-foreground text-base tracking-tight">Alade Odunayo</h4>
-          <p className="text-[10px] text-muted-foreground font-mono tracking-widest uppercase mt-1">Founder & Web Architect</p>
+          <p className="text-[10px] text-muted-foreground font-mono tracking-widest uppercase mt-1">Founder & Full-Stack Web Architect</p>
           <p className="text-[9px] text-muted-foreground/60 font-mono tracking-wider mt-0.5">Ondo, Nigeria</p>
         </div>
       </div>

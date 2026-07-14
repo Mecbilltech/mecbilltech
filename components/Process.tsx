@@ -7,37 +7,44 @@ const steps = [
   {
     icon: Compass,
     title: "1. Discovery",
-    description: "Deep dive workshops to understand your brand identity, business model, user requirements, and technical constraints.",
+    description:
+      "We learn about your business, goals, audience, and brand to create a solution tailored to your needs.",
   },
   {
     icon: Search,
     title: "2. Research",
-    description: "Competitor audit, technology stack feasibility analysis, and planning of search patterns to construct high conversions paths.",
+    description:
+      "We analyze your competitors, identify opportunities, and develop a strategy that turns visitors into customers.",
   },
   {
     icon: Palette,
     title: "3. UI/UX Design",
-    description: "Crafting modern, award-winning interactive layouts, bespoke design systems, color harmonies, and fluid micro-animations.",
+    description:
+      "We create clean, intuitive designs that strengthen your brand and deliver a seamless user experience across every device.",
   },
   {
     icon: Code,
     title: "4. Development",
-    description: "Writing semantic, type-safe, and scalable code using Next.js, React 19, TypeScript, and clean architecture structures.",
+    description:
+      "Your website is built with modern technologies for exceptional speed, security, scalability, and long-term maintainability.",
   },
   {
     icon: CheckSquare,
     title: "5. Testing",
-    description: "Rigorous cross-device quality checks, security checks, accessibility compliance, and Lighthouse performance tuning.",
+    description:
+      "Every feature is tested for responsiveness, accessibility, security, and performance to ensure a flawless experience.",
   },
   {
     icon: Rocket,
     title: "6. Deployment",
-    description: "Zero-downtime deployment on Vercel or AWS, serverless setups, DNS handshakes, and indexing search engine bots.",
+    description:
+      "We launch your website with secure hosting, SSL protection, performance optimization, and search engine indexing.",
   },
   {
     icon: ShieldCheck,
     title: "7. Ongoing Support",
-    description: "Long-term partnership with weekly backups, version upgrades, search engine performance reports, and expansion updates.",
+    description:
+      "We stay with you after launch through updates, backups, monitoring, security maintenance, and continuous improvements.",
   },
 ];
 
@@ -57,7 +64,7 @@ export default function Process() {
         <div className="absolute left-4 md:left-1/2 top-4 bottom-4 w-px bg-border -translate-x-1/2" />
 
         {/* Timeline Items */}
-        <div className="space-y-12">
+        <div className="space-y-8">
           {steps.map((step, index) => {
             const Icon = step.icon;
             const isEven = index % 2 === 0;

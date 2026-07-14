@@ -44,7 +44,7 @@ export default function Footer() {
 
   return (
     <footer className="border-t border-border bg-background pt-16 pb-8">
-      <div className="mx-auto max-w-7xl px-4 md:px-8">
+      <div className="mx-auto max-w-5xl px-4 md:px-8">
         <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5">
           {/* Logo & Description */}
           <div className="lg:col-span-2">
