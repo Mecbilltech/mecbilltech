@@ -123,13 +123,13 @@ export default function Contact() {
                 </div>
               </a>
 
-              <a href="https://linkedin.com/in/mecbilltech" target="_blank" rel="noopener" className="flex items-center gap-4 group text-muted-foreground hover:text-foreground transition-colors">
+              <a href="https://linkedin.com/in/odunayo-alade" target="_blank" rel="noopener" className="flex items-center gap-4 group text-muted-foreground hover:text-foreground transition-colors">
                 <div className="size-9 rounded-xl bg-muted border border-border flex items-center justify-center">
                   <Linkedin className="size-4" />
                 </div>
                 <div>
                   <span className="block text-[10px] uppercase font-bold tracking-wider">LinkedIn</span>
-                  <span className="text-sm font-semibold">linkedin.com/in/mecbilltech</span>
+                  <span className="text-sm font-semibold">linkedin.com/in/odunayo-alade</span>
                 </div>
               </a>
 
