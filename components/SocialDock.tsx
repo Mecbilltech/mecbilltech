@@ -6,28 +6,28 @@ import { Github, Linkedin } from "@/components/Icons";
 const socialLinks = [
   {
     name: "GitHub",
-    url: "https://github.com/mecbilltech",
+    url: "https://github.com/odunayo-20",
     icon: Github,
     label: "GitHub",
   },
   {
     name: "LinkedIn",
-    url: "https://linkedin.com/in/mecbilltech",
+    url: "https://linkedin.com/in/odunayo-alade",
     icon: Linkedin,
     label: "LinkedIn",
   },
   {
     name: "WhatsApp",
-    url: "https://wa.me/2348123456789",
+    url: "https://wa.me/2348105219630",
     icon: MessageCircle,
     label: "WhatsApp",
   },
   {
-    name: "Email",
-    url: "mailto:info@mecbilltech.com",
-    icon: Mail,
-    label: "Email",
-  },
+  name: "Email",
+  url: "mailto:mecbilltech@gmail.com?subject=Project%20Inquiry&body=Hello%20MecbillTech,%20I%20would%20like%20to%20discuss%20a%20project.",
+  icon: Mail,
+  label: "Email",
+}
 ];
 
 export default function SocialDock() {

@@ -48,7 +48,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5">
           {/* Logo & Description */}
           <div className="lg:col-span-2">
-            <Link href="#home" onClick={(e) => handleLinkClick(e, "#home")} className="flex items-center gap-2 mb-4">
+            <Link href="/" className="flex items-center gap-2 mb-4">
               <Image
                 src="/logo.png"
                 alt="MecbillTech Logo"
@@ -68,7 +68,7 @@ export default function Footer() {
               <a href="https://github.com/mecbilltech" target="_blank" rel="noopener" className="text-muted-foreground hover:text-foreground">
                 <Github className="size-5" />
               </a>
-              <a href="https://linkedin.com/in/mecbilltech" target="_blank" rel="noopener" className="text-muted-foreground hover:text-foreground">
+              <a href="https://linkedin.com/in/odunayo-alade" target="_blank" rel="noopener" className="text-muted-foreground hover:text-foreground">
                 <Linkedin className="size-5" />
               </a>
               <a href="https://twitter.com/mecbilltech" target="_blank" rel="noopener" className="text-muted-foreground hover:text-foreground">

@@ -27,7 +27,7 @@ const services = [
     title: "Custom Web Development",
     tagline: "Zero templates. Pure performance.",
     description:
-      "Every website is custom-built from the ground up to reflect your brand and achieve your business goals. We develop clean, scalable applications with Next.js and React—free from page builder bloat—delivering exceptional speed, responsiveness, and a seamless user experience across all devices.",
+      "Every website is custom-built from the ground up to reflect your brand and achieve your business goals. We develop clean, scalable applications with Next.js and React, free from page builder bloat, delivering exceptional speed, responsiveness, and a seamless user experience across all devices.",
     features: [
       "Next.js & React Development",
       "Hand-Coded Performance",
